@@ -5,9 +5,10 @@ Amazon EFS provides shared file storage for use with compute instances in the AW
 Here I'm using a simple website to demonstrate the working.
 
 ## Benefits of EFS
-EFS can be mounted in multiple instances at a time
-Scalable network storage
-Cost efficient
+* EFS can be mounted in multiple instances at a time
+* Scalable network storage
+* Cost efficient
+* 
 ### Steps
 
 1. Create an EFS 
