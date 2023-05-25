@@ -8,11 +8,11 @@ Here I'm using a simple website to demonstrate the working.
 * EFS can be mounted in multiple instances at a time
 * Scalable network storage
 * Cost efficient
-* 
+
 ### Steps
 
 1. Create an EFS 
-   Click the link for More details
+ * Click the link for More details
 2. Create and setup an instance with the following commands:
 ```
 sudo -i
@@ -28,7 +28,7 @@ cp -r /var/website/*  /var/www/html/
 chown -R apache:apache /var/www/html/*
 ```
 3. Mount EFS to Document root
-Edit fstab
+* Edit fstab
 > Give your EFS id instead of a device name or UUID 
 ```
 fs-09c0f4c52907c3e4f:/    /var/www/html/  efs  defaults,_netdev 0  0
@@ -47,8 +47,8 @@ systemctl enable httpd php-fpm
 This bash script helps in connecting EFS to new instances automatically. 
 
 5.Create a Autoscaling group(ASG) with the LC
-Attach Loadbalancer if required
-Click the link for more details.
+* Attach Loadbalancer if required
+* click link for more details
 
 Now instance will be created with EFS attached to it.
 
