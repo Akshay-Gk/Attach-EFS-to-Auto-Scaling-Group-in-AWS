@@ -1,21 +1,21 @@
 # **Attach EFS to Auto Scaling Group**
-## Description:
+###Description:
 This would help someone who runs an application/website in AWS Autoscaling Group(ASG), who came across the issue that once the existing instance gets terminated/stopped due to any reason  ASG automatically creates a new instance from the AMI or The Launch configuration but loss the data stored inside the instance/ebs. In this scenario, Elastic File System(EFS) can be a solution.
 Amazon EFS provides shared file storage for use with compute instances in the AWS Cloud and on-premises servers.
 Here I'm using a simple website to demonstrate the working.
 
-### Diagram
+### Diagram:
 ![image](https://github.com/Akshay-Gk/AWS-projects/assets/112197849/ad48eda7-b14a-4268-a28a-17d6058e1566)
 
-## Benefits of EFS
+###Benefits of EFS:
 * EFS can be mounted in multiple instances at a time
 * Scalable network storage
 * Cost efficient
 
-### Steps
+### Steps:
 
 1. Create an EFS 
- * Click the link for More details
+ * Click the link for More details(https://docs.aws.amazon.com/efs/latest/ug/gs-step-two-create-efs-resources.html)
 2. Create and setup an instance with the following commands:
 ```
 sudo -i
@@ -47,13 +47,16 @@ mount -a
 systemctl restart httpd php-fpm
 systemctl enable httpd php-fpm
 ```
-This bash script helps in connecting EFS to new instances automatically. 
+> is bash script helps in connecting EFS to new instances automatically. 
 
 5.Create a Autoscaling group(ASG) with the LC
 * Attach Loadbalancer if required
 * click link for more details
 
-Now instance will be created with EFS attached to it.
+
+### Conclusion:
+Overall, what I have done is connected highly scalable EFS to instances in the autoscaling group.
+Note: Please ensure to choose the appropriate settings while creating an EFS as per requirement.
 
 
 
