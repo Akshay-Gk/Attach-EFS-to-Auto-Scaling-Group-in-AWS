@@ -15,7 +15,7 @@ Here I'm using a simple website to demonstrate the working.
 ### Steps:
 
 1. Create an EFS 
- * Click the link for More details(https://docs.aws.amazon.com/efs/latest/ug/gs-step-two-create-efs-resources.html)
+ * Click the link for More details https://docs.aws.amazon.com/efs/latest/ug/gs-step-two-create-efs-resources.html
 2. Create and setup an instance with the following commands:
 ```
 sudo -i
