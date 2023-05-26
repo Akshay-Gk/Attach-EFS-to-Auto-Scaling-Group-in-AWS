@@ -51,7 +51,10 @@ systemctl enable httpd php-fpm
 
 5.Create a Autoscaling group(ASG) with the LC
 * Attach Loadbalancer if required
-* click link for more details
+* click below link for more details:
+* https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-launch-template.html
+* https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-getting-started.html
+* https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html
 
 
 ### Conclusion:
