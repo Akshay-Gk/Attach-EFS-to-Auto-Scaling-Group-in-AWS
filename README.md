@@ -5,7 +5,7 @@ Amazon EFS provides shared file storage for use with compute instances in the AW
 Here I'm using a simple website to demonstrate the working.
 
 ### Diagram:
-![image](https://github.com/Akshay-Gk/AWS-projects/assets/112197849/ad48eda7-b14a-4268-a28a-17d6058e1566)
+![erg](https://github.com/Akshay-Gk/AWS-projects/assets/112197849/4a2b722f-f5a9-4d14-82a6-4e618227e16a)
 
 ### Benefits of EFS:
 * EFS can be mounted in multiple instances at a time
