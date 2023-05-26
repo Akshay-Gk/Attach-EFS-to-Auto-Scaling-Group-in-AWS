@@ -3,7 +3,8 @@
 This would help someone who runs an application/website in AWS Autoscaling Group(ASG), who came across the issue that once the existing instance gets terminated/stopped due to any reason  ASG automatically creates a new instance from the AMI or The Launch configuration but loss the data stored inside the instance/ebs. In this scenario, Elastic File System(EFS) can be a solution.
 Amazon EFS provides shared file storage for use with compute instances in the AWS Cloud and on-premises servers.
 Here I'm using a simple website to demonstrate the working.
-###Diagram
+
+### Diagram
 ![image](https://github.com/Akshay-Gk/AWS-projects/assets/112197849/ad48eda7-b14a-4268-a28a-17d6058e1566)
 
 ## Benefits of EFS
