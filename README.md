@@ -7,7 +7,7 @@ Here I'm using a simple website to demonstrate the working.
 ### Diagram:
 ![image](https://github.com/Akshay-Gk/AWS-projects/assets/112197849/ad48eda7-b14a-4268-a28a-17d6058e1566)
 
-###Benefits of EFS:
+### Benefits of EFS:
 * EFS can be mounted in multiple instances at a time
 * Scalable network storage
 * Cost efficient
