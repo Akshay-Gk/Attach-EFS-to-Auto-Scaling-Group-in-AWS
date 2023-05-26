@@ -15,7 +15,46 @@ Here I'm using a simple website to demonstrate the working.
 ### Steps:
 
 1. Create an EFS 
- * Click the link for More details https://docs.aws.amazon.com/efs/latest/ug/gs-step-two-create-efs-resources.html
+
+* log in aws console > EFS > Create File System
+* Type Name and select desired VPC then clock customize.
+* ![image](https://github.com/Akshay-Gk/AWS-projects/assets/112197849/ab3ace2b-8d60-4d0f-bb84-f9aa8685a37b)
+* In Storage Class we can see two options
+- Standard -Data is stored across multiple AZ's
+- One Zone -Data is stored in single AZ
+> Note: It would be ideal to select Standard since the data are stored in multiple AZ's data would not be lost in case of any issue with the AZ. 
+* Select Automatic backups option as per need.Here we are not selecting it.
+* ![image](https://github.com/Akshay-Gk/AWS-projects/assets/112197849/049a5782-16fe-4fe0-a318-e4febd0f2d7e)
+* Lifecycle management ,Amazon EFS supports two lifecycle policies:
+- Transition into IA - Instructs lifecycle management when to transition files into the file system's Infrequent                               Access storage class.
+- Transition out of IA -  Instructs lifecycle management when to transition files out of IA storage.
+> Note : Bill generated will differ as per the option you choose.To know more about this click                            https://docs.aws.amazon.com/efs/latest/ug/lifecycle-management-efs.html
+* Enable Encryption for the data id neccessery.
+- Here im choosing 30 days in Transition into IA and Not enabling Encryption.
+![image](https://github.com/Akshay-Gk/AWS-projects/assets/112197849/6e0c7a90-adce-4902-80aa-fc775f27f0ee)
+* Perfomance Settings
+- Here we can choose the throughput and perfomace of thr file system.
+- Enhanced - For workloads with a range of performance requirements
+- Bursting - For workloads with basic performance requirements.
+- General Purpose - This is recommended performance mode for file systems. File systems with EFS One Zone storage classes always use this                     mode.
+- Max I/O - This is designed for highly parallelized workloads
+* Here we choose Bursting and General purpose.
+![image](https://github.com/Akshay-Gk/AWS-projects/assets/112197849/9b8a44f7-16be-4648-abfa-3473e3d643e1)
+- Add tags if needed.
+> Bill amount differs as per the mode we choose. 
+* Choose the desired VPC and Mount Targets ie, subnets.
+- Modify the security groups for the subnets as per need. Here i choose all traffic, which is not reccomended.
+![image](https://github.com/Akshay-Gk/AWS-projects/assets/112197849/2eb54181-5f2c-4576-a240-250d0338bc87)
+* File system policy (optional)
+- Select one or more of these common policy options, or create a custom policy as per need.
+- Here im skipping this.
+![image](https://github.com/Akshay-Gk/AWS-projects/assets/112197849/f11b2ce9-d035-46dd-8a8b-9828dbb023f6)
+* Review the seleted settings and click create.
+* Now we can see created EFS
+![image](https://github.com/Akshay-Gk/AWS-projects/assets/112197849/f13a5d49-695b-49a7-b939-73fce7c8e6fd)
+> Note: We would be using This highlighted File system ID in coming steps.
+
+
 2. Create and setup an instance with the following commands:
 ```
 sudo -i
@@ -34,7 +73,7 @@ chown -R apache:apache /var/www/html/*
 * Edit fstab
 > Give your EFS id instead of a device name or UUID 
 ```
-fs-09c0f4c52907c3e4f:/    /var/www/html/  efs  defaults,_netdev 0  0
+fs-0af3edb8356c16d77:/    /var/www/html/  efs  defaults,_netdev 0  0
 Mount -a
 ```
 4.Create a Launch configuration(LC) using below user data:
@@ -42,7 +81,7 @@ Mount -a
 #!/bin/bash
 
 yum install amazon-efs-utils httpd php  -y
-echo "fs-09c0f4c52907c3e4f:/    /var/www/html/  efs  defaults,_netdev  0  0"  >> /etc/fstab
+echo "fs-0af3edb8356c16d77:/    /var/www/html/  efs  defaults,_netdev  0  0"  >> /etc/fstab
 mount -a
 systemctl restart httpd php-fpm
 systemctl enable httpd php-fpm
