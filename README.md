@@ -47,9 +47,9 @@ f) *Perfomance Settings*
 - Here we choose Bursting and General purpose.
 ![image](https://github.com/Akshay-Gk/AWS-projects/assets/112197849/9b8a44f7-16be-4648-abfa-3473e3d643e1)
 - Add tags if needed.
-- 
+ 
 > Bill amount differs as per the mode we choose. 
-> 
+ 
 g) *Choose the desired VPC and Mount Targets ie, subnets*
 - Modify the security groups for the subnets as per need. Here i choose all traffic, which is not recommended.
 ![image](https://github.com/Akshay-Gk/AWS-projects/assets/112197849/2eb54181-5f2c-4576-a240-250d0338bc87)
