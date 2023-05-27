@@ -24,7 +24,7 @@ b) *Type name and select desired VPC then click customize*
 c) *In Storage Class we can see two options*
 - Standard - Data is stored across multiple AZ's
 - One Zone - Data is stored in single AZ
-> Note: It would be ideal to select Standard since the data are stored in multiple AZ's. Data would not be lost in case of any issue with the AZ. 
+> `Note: It would be ideal to select Standard since the data are stored in multiple AZ's. Data would not be lost in case of any issue with the AZ` 
 
 d) *Select Automatic backups option as per need. Here im not selecting it*
  ![image](https://github.com/Akshay-Gk/AWS-projects/assets/112197849/049a5782-16fe-4fe0-a318-e4febd0f2d7e)
@@ -33,7 +33,7 @@ e) *Lifecycle management ,Amazon EFS supports two lifecycle policies*:
  - Transition into IA - It instructs lifecycle management when to transition files into the file system's Infrequent access storage class.
  - Transition out of IA - It instructs lifecycle management when to transition files out of IA storage.
  - 
-> Note : Bill generated will differ as per the option you choose.To know more about this click                            https://docs.aws.amazon.com/efs/latest/ug/lifecycle-management-efs.html
+> `#RRGGBBNote : Bill generated will differ as per the option you choose.To know more about this click`                            https://docs.aws.amazon.com/efs/latest/ug/lifecycle-management-efs.html
 - Enable Encryption for the data if neccessery.
 - Here im choosing 30 days in Transition into IA and Not enabling Encryption.
 ![image](https://github.com/Akshay-Gk/AWS-projects/assets/112197849/6e0c7a90-adce-4902-80aa-fc775f27f0ee)
