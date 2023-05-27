@@ -98,8 +98,9 @@ systemctl enable httpd php-fpm
 > This bash script helps in mounting EFS to new instances automatically. 
 
 5. Create an Autoscaling group(ASG) using the Launch configuration.
-* Attach Loadbalancer if required. We can use Classic Load Balanacer(CLB) here if needed.
-
+* Attach Loadbalancer if required. 
+> We can use **Classic Load Balanacer(CLB)**, use **Route53 service** for domain name & hosting and **ACM service** for SSL certification if needed.
+  
 * click below link for more details:
 * https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-launch-template.html
 * https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-getting-started.html
